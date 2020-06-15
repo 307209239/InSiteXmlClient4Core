@@ -1,0 +1,17 @@
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\bin\Release\netcoreapp2.2\InSiteXmlClient4Core.deps.json
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\bin\Release\netcoreapp2.2\InSiteXmlClient4Core.dll
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\bin\Release\netcoreapp2.2\InSiteXmlClient4Core.pdb
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.csprojAssemblyReference.cache
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.csproj.CoreCompileInputs.cache
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.AssemblyInfoInputs.cache
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.AssemblyInfo.cs
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.dll
+L:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.pdb
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\bin\Release\netcoreapp2.2\InSiteXmlClient4Core.deps.json
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\bin\Release\netcoreapp2.2\InSiteXmlClient4Core.dll
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\bin\Release\netcoreapp2.2\InSiteXmlClient4Core.pdb
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.csproj.CoreCompileInputs.cache
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.AssemblyInfoInputs.cache
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.AssemblyInfo.cs
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.dll
+C:\Users\lidz\source\repos\FP.Mes\InSiteXmlClient4Core\obj\Release\netcoreapp2.2\InSiteXmlClient4Core.pdb

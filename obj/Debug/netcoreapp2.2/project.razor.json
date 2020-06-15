@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "l:\\Users\\lidz\\Source\\Repos\\FP.MES.Web\\InSiteXmlClient4Core\\InSiteXmlClient4Core.csproj",
+  "TargetFramework": "netcoreapp2.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

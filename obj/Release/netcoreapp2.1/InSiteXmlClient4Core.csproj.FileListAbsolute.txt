@@ -1,0 +1,9 @@
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\bin\Release\netcoreapp2.1\InSiteXmlClient4Core.deps.json
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\bin\Release\netcoreapp2.1\InSiteXmlClient4Core.dll
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\bin\Release\netcoreapp2.1\InSiteXmlClient4Core.pdb
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.1\InSiteXmlClient4Core.csprojAssemblyReference.cache
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.1\InSiteXmlClient4Core.csproj.CoreCompileInputs.cache
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.1\InSiteXmlClient4Core.AssemblyInfoInputs.cache
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.1\InSiteXmlClient4Core.AssemblyInfo.cs
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.1\InSiteXmlClient4Core.dll
+C:\Users\lidz\Source\Repos\FP.MES.Web\InSiteXmlClient4Core\obj\Release\netcoreapp2.1\InSiteXmlClient4Core.pdb

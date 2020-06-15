@@ -1,0 +1,8 @@
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\obj\Debug\netcoreapp2.0\InSiteXmlClient4Core.csproj.CoreCompileInputs.cache
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\obj\Debug\netcoreapp2.0\InSiteXmlClient4Core.AssemblyInfoInputs.cache
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\obj\Debug\netcoreapp2.0\InSiteXmlClient4Core.AssemblyInfo.cs
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\bin\Debug\netcoreapp2.0\InSiteXmlClient4Core.deps.json
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\bin\Debug\netcoreapp2.0\InSiteXmlClient4Core.dll
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\bin\Debug\netcoreapp2.0\InSiteXmlClient4Core.pdb
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\obj\Debug\netcoreapp2.0\InSiteXmlClient4Core.dll
+C:\Users\lidz\Documents\Reflector\Disassembler\InSiteXmlClient4Core\obj\Debug\netcoreapp2.0\InSiteXmlClient4Core.pdb
