@@ -14,6 +14,8 @@ var  client=new CamstarCommon("192.168.1.50",2881,"admin","admin");
 
 
 使用start服务
+
+
   var common = new CamstarCommon("192.168.1.50",2881,"admin","admin");
   common.CreateService("LotStart");
   var inputdata = common.InputData();
