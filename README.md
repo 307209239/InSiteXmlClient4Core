@@ -116,5 +116,5 @@ var  client=new CamstarCommon("192.168.1.50",2881,"admin","admin");
   return await common.ExecuteResultAsync();
   
   可进行打赏，付费进行camstar API 咨询
-https://github.com/307209239/pay/blob/master/e6c8467a282ece0b6a73627f9e7c4e3.jpg
-https://github.com/307209239/pay/blob/master/e753183955236b6eafa6210a622afa4.jpg
+![image.png](https://github.com/307209239/pay/blob/master/e6c8467a282ece0b6a73627f9e7c4e3.jpg)
+![image.png](https://github.com/307209239/pay/blob/master/e753183955236b6eafa6210a622afa4.jpg)
