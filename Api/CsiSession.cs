@@ -45,7 +45,6 @@ namespace InSiteXmlClient4Core.Api
 
         public ICsiDocument CreateDocument(string name)
         {
-            ICsiDocument document2;
             lock (this)
             {
                 string str;
@@ -77,7 +76,6 @@ namespace InSiteXmlClient4Core.Api
                 str = base.GetType().FullName + ".createDocument()";
                 throw new CsiClientException(0x2e0016L, str);
             }
-            return document2;
         }
 
         public ICsiDocument FindDocument(string name) =>

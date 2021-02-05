@@ -84,6 +84,11 @@ namespace InSiteXmlClient4Core
             return result;
 
         }
+        /// <summary>
+        /// 赋值
+        /// </summary>
+        /// <param name="csiDataField"></param>
+        /// <param name="value"></param>
         public static void SetValue(this ICsiDataField csiDataField, object value)
         {
 
@@ -100,6 +105,7 @@ namespace InSiteXmlClient4Core
                 csiDataField.SetValue(value.ToString());
             }
         }
+
 
 
     }

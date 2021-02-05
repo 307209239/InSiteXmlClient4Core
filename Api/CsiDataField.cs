@@ -81,7 +81,6 @@ namespace InSiteXmlClient4Core.Api
                 string desc = "不能转换 '" + val + "' 为 '" + format.GetType().Name + "'. " + exception.Message;
                 throw new CsiClientException(-1L, desc, str3);
             }
-            return null;
         }
 
         public virtual string GetValue()

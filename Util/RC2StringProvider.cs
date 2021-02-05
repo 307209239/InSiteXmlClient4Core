@@ -18,22 +18,22 @@ namespace InSiteXmlClient4Core.Util
         {
             ///linux 不能使用Microsoft Base Cryptographic Provider v1.0 加密 固定返回
             return "fb239b54a07d2fbc10551b4a56315bd4843bef9b6ce3b7bd";
-            CspParameters cspParams = new CspParameters(1, "Microsoft Base Cryptographic Provider v1.0");
-            PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(strPassword, (byte[])null, "MD5", 1, cspParams);
-            byte[] rgbIV = new byte[8];
-            byte[] numArray = passwordDeriveBytes.CryptDeriveKey("RC2", "MD5", 0, rgbIV);
-            RC2CryptoServiceProvider cryptoServiceProvider = new RC2CryptoServiceProvider();
-            cryptoServiceProvider.Key = numArray;
-            cryptoServiceProvider.IV = rgbIV;
-            byte[] bytes = new UnicodeEncoding().GetBytes(strMessage);
-            ICryptoTransform encryptor = cryptoServiceProvider.CreateEncryptor();
-            MemoryStream memoryStream = new MemoryStream();
-            CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, encryptor, CryptoStreamMode.Write);
-            cryptoStream.Write(bytes, 0, bytes.Length);
-            cryptoStream.FlushFinalBlock();
-            byte[] array = memoryStream.ToArray();
-            cryptoStream.Close();
-            return this.ConvertToHex(array);
+            //CspParameters cspParams = new CspParameters(1, "Microsoft Base Cryptographic Provider v1.0");
+            //PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(strPassword, (byte[])null, "MD5", 1, cspParams);
+            //byte[] rgbIV = new byte[8];
+            //byte[] numArray = passwordDeriveBytes.CryptDeriveKey("RC2", "MD5", 0, rgbIV);
+            //RC2CryptoServiceProvider cryptoServiceProvider = new RC2CryptoServiceProvider();
+            //cryptoServiceProvider.Key = numArray;
+            //cryptoServiceProvider.IV = rgbIV;
+            //byte[] bytes = new UnicodeEncoding().GetBytes(strMessage);
+            //ICryptoTransform encryptor = cryptoServiceProvider.CreateEncryptor();
+            //MemoryStream memoryStream = new MemoryStream();
+            //CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, encryptor, CryptoStreamMode.Write);
+            //cryptoStream.Write(bytes, 0, bytes.Length);
+            //cryptoStream.FlushFinalBlock();
+            //byte[] array = memoryStream.ToArray();
+            //cryptoStream.Close();
+            //return this.ConvertToHex(array);
         }
 
         public string Decrypt(string strPassword, string strMessage)

@@ -157,7 +157,6 @@ namespace InSiteXmlClient4Core
             }
             var requestDoc = Submit();
 
-            var sError = "";
             if (requestDoc.CheckErrors()) return null;
             foreach (var field in requestDoc.GetService().ResponseData().GetResponseFields())
             {
@@ -374,8 +373,56 @@ namespace InSiteXmlClient4Core
                 .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
                 .Build();
         }
-        
+        /// <summary>
+        /// 更改命名对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
 
+        public ICsiNamedObject Changes(string name)
+        {
+            this.InputData().NamedObjectField("ObjectToChange").SetRef(name);
+            this.Perform(PerformType.Load);
+            return this.InputData().NamedObjectField("ObjectChanges");
+        }
+        /// <summary>
+        /// 更改版本对象
+        /// </summary>
+        /// <param name="name">名称</param>
+        /// <param name="rev">版本</param>
+        /// <param name="useRor">是否使用默认版本</param>
+
+        public ICsiRevisionedObject Changes(string name,string rev,bool useRor)
+        {
+            this.InputData().RevisionedObjectField("ObjectToChange").SetRef(name,rev,useRor);
+            this.Perform(PerformType.Load);
+            return this.InputData().RevisionedObjectField("ObjectChanges");
+        }
+        /// <summary>
+        /// 新建ObjectChanges对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public ICsiNamedObject New(string name)
+        {
+           var objectChanges= this.InputData().NamedObjectField("ObjectChanges");
+            objectChanges.DataField("Name").SetValue(name);
+            return objectChanges;
+        }
+        /// <summary>
+        /// 新建ObjectChanges对象
+        /// </summary>
+        /// <param name="name">名称</param>
+        /// <param name="rev">版本</param>
+        /// <param name="useRor">是否设置为默认版本</param>
+        public ICsiRevisionedObject New(string name, string rev, bool useRor)
+        {
+            var objectChanges = this.InputData().RevisionedObjectField("ObjectChanges");
+            objectChanges.DataField("Name").SetValue(name);
+            objectChanges.DataField("Revision").SetValue(rev);
+            objectChanges.DataField("IsRevofRcd").SetValue(useRor);
+            return objectChanges;
+        }
         #endregion 
 
         public enum PerformType

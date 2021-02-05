@@ -170,7 +170,7 @@ namespace InSiteXmlClient4Core.Utility
             {
                 mTcpClient = null;
                 throw new Exception($"连接服务器:{Host} 端口{Port} 失败,{ex.Message}");
-                flag = false;
+              
             }
 
             return flag;
@@ -560,6 +560,7 @@ namespace InSiteXmlClient4Core.Utility
             }
             catch (Exception ex)
             {
+                LogHelper.Error<ServerConnection>(ex.Message);
             }
         }
 

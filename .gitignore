@@ -3,3 +3,6 @@
 ################################################################################
 
 /bin/Debug
+/obj
+/.vs/InSiteXmlClient4Core/DesignTimeBuild
+/.vs/InSiteXmlClient4Core/v16/.suo

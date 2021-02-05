@@ -1,6 +1,7 @@
 ﻿using InSiteXmlClient4Core.InterFace;
 using System;
 using System.Xml;
+using InSiteXmlClient4Core.Util;
 
 namespace InSiteXmlClient4Core.Api
 {
@@ -34,6 +35,7 @@ namespace InSiteXmlClient4Core.Api
             }
             catch (Exception ex)
             {
+                LogHelper.Error<CsiRequestSelectionValuesEx>(ex.Message);
             }
         }
 
@@ -55,6 +57,7 @@ namespace InSiteXmlClient4Core.Api
             }
             catch (Exception ex)
             {
+                LogHelper.Error<CsiRequestSelectionValuesEx>(ex.Message);
             }
         }
 
@@ -72,6 +75,7 @@ namespace InSiteXmlClient4Core.Api
             }
             catch (Exception ex)
             {
+                LogHelper.Error<CsiRequestSelectionValuesEx>(ex.Message);
                 return false;
             }
         }
@@ -87,6 +91,7 @@ namespace InSiteXmlClient4Core.Api
             }
             catch (Exception ex)
             {
+                LogHelper.Error<CsiRequestSelectionValuesEx>(ex.Message);
             }
         }
 
