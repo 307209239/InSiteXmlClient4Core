@@ -376,7 +376,7 @@ namespace InSiteXmlClient4Core
         /// <summary>
         /// 更改命名对象
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="name"></typeparam>
         /// <returns></returns>
 
         public ICsiNamedObject Changes(string name)
@@ -384,6 +384,18 @@ namespace InSiteXmlClient4Core
             this.InputData().NamedObjectField("ObjectToChange").SetRef(name);
             this.Perform(PerformType.Load);
             return this.InputData().NamedObjectField("ObjectChanges");
+        }
+        /// <summary>
+        /// 删除命名对象
+        /// </summary>
+        /// <typeparam name="name"></typeparam>
+        /// <returns></returns>
+
+        public (bool Status, string Message) Delete(string name)
+        {
+            this.InputData().NamedObjectField("ObjectToChange").SetRef(name);
+            this.Perform(PerformType.Delete);
+            return this.ExecuteResult();
         }
         /// <summary>
         /// 更改版本对象
@@ -397,6 +409,19 @@ namespace InSiteXmlClient4Core
             this.InputData().RevisionedObjectField("ObjectToChange").SetRef(name,rev,useRor);
             this.Perform(PerformType.Load);
             return this.InputData().RevisionedObjectField("ObjectChanges");
+        }
+        /// <summary>
+        /// 删除版本对象
+        /// </summary>
+        /// <param name="name">名称</param>
+        /// <param name="rev">版本</param>
+        /// <param name="deleteAllRev">删除所有</param>
+
+        public (bool Status, string Message) Delete(string name, string rev,bool deleteAllRev=false)
+        {
+            this.InputData().RevisionedObjectField("ObjectToChange").SetRef(name, rev, false);
+            this.Perform(PerformType.Delete);
+            return this.ExecuteResult();
         }
         /// <summary>
         /// 新建ObjectChanges对象
