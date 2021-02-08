@@ -114,10 +114,15 @@ var  client=new CamstarCommon("192.168.1.50",2881,"admin","admin");
   }
   
   return await common.ExecuteResultAsync();
+  
 #20210206更新
+
 1.添加单元测试项目
+
 2.添加了nameobject revsionObject的change 和new 方法  ，具体使用请看单元测试项目
+
 3.添加了接口ICsiSelectionValue和ICsiSelectionValuesEx接口的实现类型CsiSelectionValue CsiSelectionValuesEx
+
 4.更新nuget包为1.0.4版本
   
   可进行打赏，付费进行camstar API 咨询
