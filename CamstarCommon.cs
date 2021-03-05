@@ -430,7 +430,8 @@ namespace InSiteXmlClient4Core
         /// <returns></returns>
         public ICsiNamedObject New(string name)
         {
-           var objectChanges= this.InputData().NamedObjectField("ObjectChanges");
+            this.Perform(PerformType.New);
+            var objectChanges= this.InputData().NamedObjectField("ObjectChanges");
             objectChanges.DataField("Name").SetValue(name);
             return objectChanges;
         }
@@ -442,6 +443,7 @@ namespace InSiteXmlClient4Core
         /// <param name="useRor">是否设置为默认版本</param>
         public ICsiRevisionedObject New(string name, string rev, bool useRor)
         {
+            this.Perform(PerformType.New);
             var objectChanges = this.InputData().RevisionedObjectField("ObjectChanges");
             objectChanges.DataField("Name").SetValue(name);
             objectChanges.DataField("Revision").SetValue(rev);
