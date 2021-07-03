@@ -170,7 +170,7 @@ namespace InSiteXmlClient4Core.Utility
             {
                 mTcpClient = null;
                 throw new Exception($"连接服务器:{Host} 端口{Port} 失败,{ex.Message}");
-              
+
             }
 
             return flag;
@@ -203,7 +203,7 @@ namespace InSiteXmlClient4Core.Utility
             }
             catch (Exception ex)
             {
-               
+
                 throw new Exception($"发送失败：{ex.Message}");
             }
 
@@ -235,7 +235,7 @@ namespace InSiteXmlClient4Core.Utility
                 }
                 catch (Exception ex)
                 {
-                 
+
                     throw new Exception($"接收失败：{ex.Message}");
                 }
 
@@ -272,8 +272,7 @@ namespace InSiteXmlClient4Core.Utility
             return Submit(host, port, inboundXML, inboundXMLFilePath, logXML, null);
         }
 
-        public virtual string Submit(string host, int port, string inboundXML, string inboundXMLFilePath, bool logXML,
-            string xmlLogPath)
+        public virtual string Submit(string host, int port, string inboundXML, string inboundXMLFilePath, bool logXML, string xmlLogPath)
         {
             if (!StringUtil.IsEmptyString(host))
                 mHost = host;
@@ -345,7 +344,6 @@ namespace InSiteXmlClient4Core.Utility
                 {
                     Disconnect();
                 }
-
                 return outputXML;
             }
         }
@@ -435,8 +433,8 @@ namespace InSiteXmlClient4Core.Utility
         protected virtual string EncryptPassword(string document)
         {
             var str1 = document;
-            var xmlWriter = (XmlWriter) null;
-            var reader = (XmlReader) null;
+            var xmlWriter = (XmlWriter)null;
+            var reader = (XmlReader)null;
             var flag1 = false;
             try
             {
@@ -474,7 +472,7 @@ namespace InSiteXmlClient4Core.Utility
                     {
                         if (reader.NodeType == XmlNodeType.Element && reader.LocalName == "__InSite")
                         {
-                            var str2 = (string) null;
+                            var str2 = (string)null;
                             xmlWriter.WriteStartElement(reader.LocalName);
                             for (var flag2 = reader.MoveToFirstAttribute(); flag2; flag2 = reader.MoveToNextAttribute())
                                 if (reader.LocalName == "__encryption")
@@ -511,7 +509,7 @@ namespace InSiteXmlClient4Core.Utility
                                     if (reader.LocalName != "__encrypted")
                                         xmlWriter.WriteAttributeString(reader.LocalName, reader.Value);
                                 xmlWriter.WriteAttributeString("__encrypted", "no");
-                                var content = (int) reader.MoveToContent();
+                                var content = (int)reader.MoveToContent();
                                 var fieldData = reader.ReadElementContentAsString();
                                 // xmlWriter.WriteValue(CryptUtil.Encrypt(fieldData));
                                 xmlWriter.WriteValue(fieldData);
@@ -553,10 +551,12 @@ namespace InSiteXmlClient4Core.Utility
                     .Replace("encoding=\"UTF-16LE\"", "");
                 if (document1[document1.Length - 1] == 0)
                     document1 = document1.Remove(document1.Length - 1, 1);
-                var streamWriter = new StreamWriter(Path.Combine(Path.GetTempPath(), "Insite.log"), false,
-                    Encoding.Default);
-                streamWriter.WriteLine(MaskPassword(document1));
-                streamWriter.Close();
+
+                using (var streamWriter = new StreamWriter(Path.Combine(Path.GetTempPath(), "Insite.log"), true, Encoding.Default))
+                {
+                    streamWriter.WriteLine(MaskPassword(document1));
+                    streamWriter.Close();
+                }
             }
             catch (Exception ex)
             {

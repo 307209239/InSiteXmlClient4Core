@@ -72,7 +72,7 @@ namespace InSiteXmlClient4Core.Api
                 {
                     typeName = "Camstar.XMLClient.API.CsiXmlElement";
                 }
-                Type type = Type.GetType(typeName);
+                Type type = Type.GetType(typeName, true);
                 Type type2 = typeof(ICsiDocument);
                 Type type3 = typeof(XmlElement);
                 element3 = (ICsiXmlElement)type.GetConstructor(new[] { type2, type3 }).Invoke(new object[] { document, element });

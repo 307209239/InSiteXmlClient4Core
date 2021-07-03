@@ -24,7 +24,7 @@ namespace InSiteXmlClient4Core.Api
             {
                 return this.FindChildByName("__recordSet") as ICsiRecordset;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return (ICsiRecordset)null;
             }
@@ -36,7 +36,7 @@ namespace InSiteXmlClient4Core.Api
             {
                 return this.FindChildByName("__recordSetHeader") as ICsiRecordsetHeader;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return (ICsiRecordsetHeader)null;
             }
@@ -46,14 +46,14 @@ namespace InSiteXmlClient4Core.Api
         {
             long num = 0;
             var childByName = this.FindChildByName("__responseData") as CsiDataField;
-            if ( childByName!=null)
+            if (childByName != null)
             {
-                ICsiDataField childByNam= childByName .FindChildByName("__recordCount") as ICsiDataField;
+                ICsiDataField childByNam = childByName.FindChildByName("__recordCount") as ICsiDataField;
                 try
                 {
                     num = long.Parse(childByNam.GetValue());
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                 }
             }

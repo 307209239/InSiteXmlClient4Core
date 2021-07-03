@@ -21,21 +21,23 @@ namespace InSiteXmlClient4Core
         private ICsiDocument _document;
         private ICsiService _service;
         private Guid _sessionId;
+        private InsiteLoginModel _lastLoginModel;
+
         public Guid SessionId => _sessionId;
         public static IConfiguration Configuration { get; set; }
-       
+
 
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="factory">工厂</param>
-        public CamstarCommon(string factory,IConfiguration configuration)
+        public CamstarCommon(string factory, IConfiguration configuration)
         {
             if (string.IsNullOrEmpty(factory))
             {
                 throw new Exception("工厂参数不能为空");
             }
-            var model = GetConfigModel(factory,configuration);
+            var model = GetConfigModel(factory, configuration);
             if (model is InsiteLoginModel loginModel)
             {
                 _session = null;
@@ -46,13 +48,22 @@ namespace InSiteXmlClient4Core
                 _sessionId = Guid.NewGuid();
                 _connection = _client.CreateConnection(loginModel.Host, loginModel.Port);
                 _session = _connection.CreateSession(loginModel.User, loginModel.Password, _sessionId.ToString());
+                _lastLoginModel = model;
             }
-          
         }
 
-        private InsiteLoginModel GetConfigModel(string factory ,IConfiguration configuration=null)
+        /// <summary>
+        /// 获取最近的登录模型信息
+        /// </summary>
+        /// <returns></returns>
+        public InsiteLoginModel GetLoginModel()
         {
-            if (configuration!=null)
+            return _lastLoginModel;
+        }
+
+        private InsiteLoginModel GetConfigModel(string factory, IConfiguration configuration = null)
+        {
+            if (configuration != null)
             {
                 Configuration = configuration;
             }
@@ -62,15 +73,15 @@ namespace InSiteXmlClient4Core
                     .Add(new JsonConfigurationSource { Path = "appsettings.json", ReloadOnChange = true })
                     .Build();
             }
-            
+
             var model = new InsiteLoginModel();
             model.Host = Configuration["MESFactory:" + factory + ":Host"];
-            model.Port =Convert.ToInt32( Configuration["MESFactory:" + factory + ":Port"]??"2281");
-            model.User= Configuration["MESFactory:" + factory + ":User"];
-            model.Password= Configuration["MESFactory:" + factory + ":Password"];
+            model.Port = Convert.ToInt32(Configuration["MESFactory:" + factory + ":Port"] ?? "2281");
+            model.User = Configuration["MESFactory:" + factory + ":User"];
+            model.Password = Configuration["MESFactory:" + factory + ":Password"];
             return model;
         }
-       
+
 
 
 
@@ -116,11 +127,16 @@ namespace InSiteXmlClient4Core
             _sessionId = Guid.NewGuid();
             _connection = _client.CreateConnection(host, port);
             _session = _connection.CreateSession(userName, password, _sessionId.ToString());
-
         }
 
 
-
+        public CsiClient Client
+        {
+            get
+            {
+                return _client;
+            }
+        }
 
 
         #region Document操作
@@ -299,8 +315,8 @@ namespace InSiteXmlClient4Core
                                     this._document.ResponseData()?.GetOwnerDocument()?.AsXml());
                 ;
             }
-           
-           
+
+
 
         }
         /// <summary>
@@ -404,9 +420,9 @@ namespace InSiteXmlClient4Core
         /// <param name="rev">版本</param>
         /// <param name="useRor">是否使用默认版本</param>
 
-        public ICsiRevisionedObject Changes(string name,string rev,bool useRor)
+        public ICsiRevisionedObject Changes(string name, string rev, bool useRor)
         {
-            this.InputData().RevisionedObjectField("ObjectToChange").SetRef(name,rev,useRor);
+            this.InputData().RevisionedObjectField("ObjectToChange").SetRef(name, rev, useRor);
             this.Perform(PerformType.Load);
             return this.InputData().RevisionedObjectField("ObjectChanges");
         }
@@ -417,7 +433,7 @@ namespace InSiteXmlClient4Core
         /// <param name="rev">版本</param>
         /// <param name="deleteAllRev">删除所有</param>
 
-        public (bool Status, string Message) Delete(string name, string rev,bool deleteAllRev=false)
+        public (bool Status, string Message) Delete(string name, string rev, bool deleteAllRev = false)
         {
             this.InputData().RevisionedObjectField("ObjectToChange").SetRef(name, rev, false);
             this.Perform(PerformType.Delete);
@@ -431,7 +447,7 @@ namespace InSiteXmlClient4Core
         public ICsiNamedObject New(string name)
         {
             this.Perform(PerformType.New);
-            var objectChanges= this.InputData().NamedObjectField("ObjectChanges");
+            var objectChanges = this.InputData().NamedObjectField("ObjectChanges");
             objectChanges.DataField("Name").SetValue(name);
             return objectChanges;
         }

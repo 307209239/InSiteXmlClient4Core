@@ -1,4 +1,12 @@
 # InSiteXmlClient4Core
+
+https://github.com/307209239/InSiteXmlClient4Core.git
+版本：1.0.5 
+28b387609fdd37a408e8e3f4158f4cc351cdc417
+
+1.0.6
+增加ICsiRecordset,ICsiRecordsetField接口的实现，调整获取类型时的异常报错！
+
 工作原因经常使用camstar的 InsiteXMLClient类库做二次开发，但是只能在4.X环境下使用，对于日益繁荣的.net core生态，花费了些时间把原有的类库重新封装为.net core 类库，并在实际环境中测试通过。
 
 1.类库不再使用camstar的命名方式，接口统一以I开头
