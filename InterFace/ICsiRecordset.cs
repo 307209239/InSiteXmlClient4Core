@@ -34,4 +34,11 @@ namespace InSiteXmlClient4Core.InterFace
         /// </summary>
         void MovePrevious();
     }
+
+    public interface ICsiRecordsetField : ICsiXmlElement
+    {
+        string GetName();
+
+        string GetValue();
+    }
 }

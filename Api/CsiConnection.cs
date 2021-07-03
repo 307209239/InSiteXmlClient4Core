@@ -8,24 +8,32 @@ namespace InSiteXmlClient4Core.Api
     /// <summary>
     /// 连接
     /// </summary>
-    internal class CsiConnection : ICsiConnection
+    public class CsiConnection : ICsiConnection
     {
         private Hashtable _sessions = new Hashtable();
         private string _host;
         private int _port;
         private int _timeout;
+
         public CsiConnection(string host, int port)
         {
             this._host = host;
             this._port = port;
             this._timeout = 0;
-
         }
-        private ServerConnection mServerConnection = new ServerConnection();
-      
-      
 
-        public  ICsiSession CreateSession(string userName, string password, string sessionName)
+        /// <summary>
+        /// 记录会话
+        /// </summary>
+        public bool LogSesssion
+        {
+            get { return mServerConnection.LogXml; }
+            set { mServerConnection.LogXml = value; }
+        }
+
+        private ServerConnection mServerConnection = new ServerConnection();
+
+        public ICsiSession CreateSession(string userName, string password, string sessionName)
         {
             lock (this)
             {
@@ -78,7 +86,6 @@ namespace InSiteXmlClient4Core.Api
             return _timeout;
         }
 
-        public string Submit(string requestXml) =>
-            this.mServerConnection.Submit(this._host, this._port, requestXml);
+        public string Submit(string requestXml) => this.mServerConnection.Submit(this._host, this._port, requestXml);
     }
 }
